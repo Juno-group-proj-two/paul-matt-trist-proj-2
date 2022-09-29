@@ -7,17 +7,20 @@
     <title>Project 2</title>
 </head>
 <body>
-    <nav>
-        
-    </nav>
-    <script>
-        fetch('https://api.spoonacular.com/food/wine/pairing?apiKey=8161e734602a4734b2d6d521776cfb99&food=burger')
-        .then( (apiData)=>{
-            return apiData.json();
-        })
-        .then( function(apiData){
-            console.log(`Recipe Data`, apiData);
-        })
-    </script>
+        <header>
+            <div class="landingPage">
+                <nav class="navBar wrapper">
+                    <ul>
+                        <li><a href="#">wine recommendation</a></li>
+                        <li><a href="#">food recommendation</a></li>
+                    </ul>
+                </nav>
+                <h1 class="wrapper">What Shall we have tonight?</h1>
+                <div class="imageContainer1">
+                    <img src="#####" alt="Wine">
+                </div>
+                    </header>
+            </div>
+            <script src="scripts.js"></script> 
 </body>
 </html>
