@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
     <title>Project 2</title>
-</head>
-<body>
-    <script>
-        fetch('https://api.spoonacular.com/food/wine/pairing?apiKey=8161e734602a4734b2d6d521776cfb99&food=burger')
-        .then( (apiData)=>{
-            return apiData.json();
-        })
-        .then( function(apiData){
-            console.log(`Recipe Data`, apiData);
-        })
-    </script>
+  </head>
+  <body>
+    <header>
+        <h1>Culinary Advocate</h1>
+        <nav class="navBar">
+            <!-- Throw in a hamburger menu if we feel -->
+            <!-- <div class="toggleButton">
+              <i class="fa-solid fa-bars fa-xl"></i> -->
+            </div>
+            <div class="navBarLinks">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+     </header>
+     <section class="intro wrapper">
+        <div><img src="https://placekitten.com/300/300 " alt="Food and wine"></div>
+        <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident facilis exercitationem architecto ea eaque repellat assumenda enim qui omnis libero eius ipsa, quam sed. Saepe veniam aperiam facilis ab aliquid.</p>
+        </div>
+     </section>
+     <section class="information wrapper">
+         <h2>Select Your Preferences</h2>
+         <form action="">
+            <fieldset>
+                <legend>Chose a Type of Wine</legend>
+                <label><input type="radio" name="radio" value="white" /> White</label>
+                <label><input type="radio" name="radio" value="red" /> Red</label>
+              </fieldset>
+              <label for="pet-select">Choose a pet:</label>
+
+              <select name="pets" id="pet-select">
+                  <option value="">--Please choose an option--</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="hamster">Hamster</option>
+                  <option value="parrot">Parrot</option>
+                  <option value="spider">Spider</option>
+                  <option value="goldfish">Goldfish</option>
+              </select>
+              
+            </form>
+        </section>
+     <section class="results">
+           <div><img src="https://placekitten.com/400/400" alt=A delicious meal"></div>
+           <div>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident facilis exercitationem architecto ea eaque repellat assumenda enim qui omnis libero eius ipsa, quam sed. Saepe veniam aperiam facilis ab aliquid.</p>
+           </div>
+     </section>
+     <footer>
+        <p>Copyright &copy; 2022 Juno College</p>
+     </footer>
+
+
+      <script src="./app.js"></script>
 </body>
 </html>
