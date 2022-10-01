@@ -1,0 +1,32 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// WRAPPER:
+.wrapper{
+    width:80%;
+    max-width:1620px;
+    margin:0 auto;
+}
+
+// MULTI USE:
+body{
+    background-color:$fb-red;
+}
+
+hr{
+    height:5px;
+    background-color:$white-wine;
+    color:$white-wine;
+}
+
+button{
+    height: 40px;
+    width: 160px;
+    background-color:$white-wine;
+    color:$fb-red;
+    border-radius:10%;
+    position:absolute;
+    right:50%;
+    bottom:0%;
+    transform:translateX(50%)
+}
