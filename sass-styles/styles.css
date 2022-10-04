@@ -255,7 +255,6 @@ button {
   position: absolute;
   right: 50%;
   bottom: 0%;
-  transform: translateX(50%);
 }
 
 .mobile-nav {
