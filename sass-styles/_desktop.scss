@@ -1,0 +1,132 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+header{
+    background-color:$fb-red;
+}
+.temp-design{
+    background-image:url('../assets/header-one-unsplash-crop.jpg');
+    width:100%;
+    height:60vh;
+
+    h1{   
+        @include upper-ubuntu-w;
+        font-size:3.5rem;
+        background-color:$fb-red;
+        border:2px solid $white-wine;
+        width:33%;
+        transform:translateY(200%);
+    }
+}
+h3{
+        @include upper-ubuntu-rose;
+        font-size:2rem;
+}
+.how-to{
+    @include general-grid;
+    text-align:center;
+
+    .about-left, .about-right{
+        margin:5% 0;
+    }
+    span{
+        @include upper-ubuntu-rose;
+        font-size:1.5rem;
+        font-weight: 700;
+    }
+    .about-steps{
+        display:grid;
+        grid-template-columns:repeat(2, 1fr);
+        gap:1rem;
+    }
+    p{
+        @include upper-ubuntu-w;
+        font-size:1.2rem;
+        text-align:left;
+        margin:5px 0;
+    }
+}
+
+.wine-input{
+    @include general-grid;
+    margin:1% auto;
+    border:5px solid $white-wine;
+
+    h2{
+        @include upper-ubuntu-w;
+        font-size:2rem;
+        margin-top:10%;
+    }
+
+    form{
+        @include general-grid;
+        gap:5rem;
+        margin:5% 0;
+        height:10vh;
+    }
+    .choose-wine{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        @include upper-ubuntu-rose;
+        border:hidden;
+        padding:0;
+
+        legend{
+            grid-row:span 2;
+            margin-left:30px;
+        }
+        div{
+            margin-top:20%;
+        }
+    }
+    .wine-radios{
+        display:flex;
+        justify-content:center;
+    }
+    label{
+        @include upper-ubuntu-w;
+    }
+    .varietal-container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        position:relative;
+        
+        label{
+            @include upper-ubuntu-rose;
+            padding:0;
+        }
+        .wine-drop-down{
+            width:90%;
+            margin:1% 0;
+        }
+    }
+}
+
+.meal-suggestion{
+    @include general-grid;
+    margin:5% auto;
+
+    p{
+        @include upper-ubuntu-w;
+        margin:5% auto;
+    }
+
+    img{
+        width:100%;
+    }
+    a{
+        text-decoration:none;
+        color:$rose;
+    }
+}
+
+footer{
+    @include upper-ubuntu-w;
+    margin:1% auto;
+
+    a{
+        text-decoration:none;
+        color:$rose;
+    }
+}

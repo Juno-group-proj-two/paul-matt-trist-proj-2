@@ -1,0 +1,20 @@
+@use './variables' as *;
+
+@mixin upper-ubuntu-w{
+    font-family:$primary-font;
+    text-transform:uppercase;
+    color:$white-wine;
+    text-align:center;
+}
+
+@mixin upper-ubuntu-rose{
+    font-family:$primary-font;
+    text-transform:uppercase;
+    color:$rose;
+    text-align:center;
+}
+
+@mixin general-grid{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+}
