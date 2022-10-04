@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header>
+    <!-- <header>
         <div class="landingPage">
             <nav class="navBar wrapper">
                 <ul>
@@ -23,6 +23,60 @@
             </div>
     </header>
     </div>
-    <script src="scripts.js"></script>
+    <script src="scripts.js"></script> -->
+    <header>
+        <h1>Culinary Advocate</h1>
+        <nav class="navBar">
+            <!-- Throw in a hamburger menu if we feel -->
+            <!-- <div class="toggleButton">
+              <i class="fa-solid fa-bars fa-xl"></i> -->
+            </div>
+            <div class="navBarLinks">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+     </header>
+     <section class="intro wrapper">
+        <div><img src="https://picsum.photos/300/300 " alt="Food and wine"></div>
+        <div>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident facilis exercitationem architecto ea eaque repellat assumenda enim qui omnis libero eius ipsa, quam sed. Saepe veniam aperiam facilis ab aliquid.</p>
+        </div>
+     </section>
+     <section class="information wrapper">
+         <h2>Select Your Preferences</h2>
+         <form action="" id="wineForm">
+            <!-- <fieldset>
+                <legend>Chose a Type of Wine</legend>
+                <label><input type="radio" name="radio" value="white" /> White</label>
+                <label><input type="radio" name="radio" value="red" /> Red</label>
+              </fieldset> -->
+              <label for="pet-select">Choose a wine:</label>
+
+              <select name="wines" id="wineOptions">
+                  <option value="">--Please choose an option--</option>
+                  <option value="white_bordeaux">white_bordeaux</option>
+                  <option value="dolcetto">dolcetto</option>
+                  <option value="carmenere">carmenere</option>
+                  <option value="malbec">malbec</option>
+                  <option value="pinot_blanc">pinot_blanc</option>
+                  <option value="goldfish">Goldfish</option>
+              </select>
+              <button type="submit" class="submitButton">Submit</button>
+         </form>
+        </section>
+     <section class="results">
+           <div><img src="https://picsum.photos/200/400" alt= "delicious meal"></div>
+           <div><h2>Your curated Selection</h2>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident facilis exercitationem architecto ea eaque repellat assumenda enim qui omnis libero eius ipsa, quam sed. Saepe veniam aperiam facilis ab aliquid.</p>
+           </div>
+     </section>
+     <footer>
+        <p>Copyright &copy; 2022 Juno College</p>
+     </footer>
+     <script src="scripts.js"></script>
 </body>
 </html>
