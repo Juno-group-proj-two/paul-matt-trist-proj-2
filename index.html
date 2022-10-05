@@ -69,32 +69,27 @@
     <!-- FORM CODE FROM MATT -->
     <h2>Select Your Preferences</h2>
     <!-- RED OR WHITE? -->
-    <form action="" id="wineForm" name="wine-form">
+    <form action="" id="wine-form" name="wine-form">
         <div>
             <fieldset class="choose-wine">
             <legend>Choose a Type of Wine</legend>
             <div>
-                <input type="radio" id="white-wine-radio" name="wine-radio" value="white-wine">
+                <input type="radio" id="white-wine-radio" name="wine-radio" value="white-wine" class="radio-white">
                 <label for="white-wine">White</label>
             </div>
             <div>
-                <input type="radio" id="red-wine-radio" name="wine-radio" value="red-wine">
+                <input type="radio" id="red-wine-radio" name="wine-radio" value="red-wine" class="radio-red">
                 <label for="red-wine">Red</label>
             </div>
-            <!-- <div>
-                <label><input type="radio" name="radio" value="white"/>White</label>
-            </div>
-            <div>
-                <label><input type="radio" name="radio" value="red"/>Red</label>
-            </div> -->
             </fieldset>
         </div>
 
     <!-- VARIETAL? -->
     <div class="varietal-container">
         <label for="varietal-select">Choose a varietal:</label>
+        <br>
         <!-- MATT FORM -->
-        <select name="wines" id="wineOptions">
+        <!-- <select name="wines" id="wineOptions">
             <option value="">--Please choose an option--</option>
             <option value="red_burgundy">red_burgundy</option>
             <option value="chardonnay">chardonnay</option>
@@ -105,9 +100,9 @@
             <option value="pinot_noir">pinot_noir</option>
             <option value="merlot">merlot</option>
         </select>
-        <button type="submit" class="submitButton">Submit</button>
-        <!-- WINE WINE RADIAL SELECTED
-        <select name="white-wines" id="white-wine-options" class="white-wine-drop-down">
+        <button type="submit" class="submitButton">Submit</button> -->
+        <!-- WINE WINE RADIAL SELECTED-->
+        <select name="white-wines" id="white-options" class="white-wine-list is-hidden"> 
             <option value="" selected disabled>Tonight's White is:
             </option>
             <option value="pinot_blanc">Pinot Blanc</option>
@@ -119,7 +114,7 @@
             <option value="riesling">Riesling</option>
         </select>
         <!-- RED WINE RADIAL SELECTED -->
-        <!-- <select name="red-wines" id="red-wine-options" class="red-wine-drop-down is-hidden">
+        <select name="red-wines" id="red-options" class="red-wine-list is-hidden">
             <option value="" selected disabled>Tonight's Red is:
             </option>
             <option value="cabernet_sauvignon">Cabernet Sauvignon</option>
@@ -132,7 +127,8 @@
             <option value="negroamaro">Negroamaro</option>
             <option value="rioja">Rioja</option>
             <option value="zinfandel">Zinfandel</option>
-        </select> -->
+        </select>
+        <br>
         <button type="submit" class="submitButton">Submit</button>
     </div><!--.varietal-container end-->
     <!-- VARIETAL INPUT END -->
