@@ -57,7 +57,10 @@ h3{
         font-size:2rem;
         margin-top:10%;
     }
-
+    p{
+        @include upper-ubuntu-w;
+        margin:18px 0;
+    }
     form{
         @include general-grid;
         gap:5rem;
@@ -96,9 +99,11 @@ h3{
             @include upper-ubuntu-rose;
             padding:0;
         }
-        .wine-drop-down{
+        .white-wine-list, .red-wine-list{
             width:90%;
-            margin:1% 0;
+            margin:18px 0;
+            padding:0;
+            border:0;
         }
     }
 }

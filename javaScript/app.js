@@ -3,13 +3,16 @@ const whiteWine = document.querySelector('.radio-white');
 const redWine = document.querySelector('.radio-red');
 const whiteList = document.querySelector('.white-wine-list');
 const redList = document.querySelector('.red-wine-list');
+const chooseReminder = document.querySelector('.choose');
 whiteWine.addEventListener('click', ()=>{
     whiteList.classList.remove('is-hidden');
     redList.classList.add('is-hidden');
+    chooseReminder.classList.add('is-hidden')
 })
 redWine.addEventListener('click', ()=>{
     redList.classList.toggle('is-hidden');
     whiteList.classList.add('is-hidden');
+    chooseReminder.classList.add('is-hidden');
 })
 
 // Wine App:
@@ -24,11 +27,11 @@ app.getWine = (query) => {
         wine: query,
     });
 
-    console.log(url)
+    // console.log(url)
 
     fetch(url)
         .then((response) => {
-            console.log(response);
+            // console.log(response);
             if (response.ok) {
                 return response.json();
             } else {
@@ -50,7 +53,7 @@ app.getWine = (query) => {
             // console.log(error);
 
             if (error.message === "false") {
-                alert("Please Select a Wine in the Dropdown Menu")
+                alert("Please choose Red or White then a type in the dropdown menu")
             } 
         });
 };
@@ -65,12 +68,13 @@ app.getUserInput = () => {
         
         if (whiteWine.checked == true){
         const userInput = whiteSelect.options[whiteSelect.selectedIndex].value;
-        console.log(userInput);
+        // console.log(userInput);
         app.getWine(userInput)
         } 
+        // Update to else if for sparkling?
         else {
             const userInput = redSelect.options[redSelect.selectedIndex].value;
-            console.log(userInput);
+            // console.log(userInput);
             app.getWine(userInput);
         }
     });
