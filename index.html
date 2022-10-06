@@ -1,7 +1,6 @@
 <!--WIREFRAME BY MATT, PSEUDOCODE BY PAUL  -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -70,44 +69,41 @@
     <!-- FORM CODE FROM MATT -->
     <h2>Select Your Preferences</h2>
     <!-- RED OR WHITE? -->
-    <form action="" id="wineForm" name="wine-form">
+    <form action="" id="wine-form" name="wine-form">
         <div>
             <fieldset class="choose-wine">
             <legend>Choose a Type of Wine</legend>
             <div>
-                <input type="radio" id="white-wine-radio" name="wine-radio" value="white-wine">
+                <input type="radio" id="white-wine-radio" name="wine-radio" value="white-wine" class="radio-white">
                 <label for="white-wine">White</label>
             </div>
             <div>
-                <input type="radio" id="red-wine-radio" name="wine-radio" value="red-wine">
+                <input type="radio" id="red-wine-radio" name="wine-radio" value="red-wine" class="radio-red">
                 <label for="red-wine">Red</label>
             </div>
-            <select name="wines" id="wineOptions">
-                <option value="">--Please choose an option--</option>
-                <option value="red_burgundy">red_burgundy</option>
-                <option value="chardonnay">chardonnay</option>
-                <option value="pinot_grigio">pinot_grigio</option>
-                <option value="malbec">malbec</option>
-                <option value="shiraz">shiraz</option>
-                <option value="riesling">riesling</option>
-                <option value="pinot_noir">pinot_noir</option>
-                <option value="merlot">merlot</option>
-            </select>
-            <button type="submit" class="submitButton">Submit</button>
-            <!-- <div>
-                <label><input type="radio" name="radio" value="white"/>White</label>
-            </div>
-            <div>
-                <label><input type="radio" name="radio" value="red"/>Red</label>
-            </div> -->
             </fieldset>
         </div>
 
     <!-- VARIETAL? -->
-    <!-- <div class="varietal-container">
-        <label for="varietal-select">Choose a varietal:</label> -->
-        <!-- WINE WINE RADIAL SELECTED -->
-        <!-- <select name="white-wines" id="white-wine-options" class="wine-options">
+    <div class="varietal-container">
+        <label for="varietal-select">Choose a varietal:</label>
+        <br>
+        <p class="choose">Start by choosing red or white</p>
+        <!-- MATT FORM -->
+        <!-- <select name="wines" id="wineOptions">
+            <option value="">--Please choose an option--</option>
+            <option value="red_burgundy">red_burgundy</option>
+            <option value="chardonnay">chardonnay</option>
+            <option value="pinot_grigio">pinot_grigio</option>
+            <option value="malbec">malbec</option>
+            <option value="shiraz">shiraz</option>
+            <option value="riesling">riesling</option>
+            <option value="pinot_noir">pinot_noir</option>
+            <option value="merlot">merlot</option>
+        </select>
+        <button type="submit" class="submitButton">Submit</button> -->
+        <!-- WINE WINE RADIAL SELECTED-->
+        <select name="white-wines" id="white-options" class="white-wine-list is-hidden"> 
             <option value="" selected disabled>Tonight's White is:
             </option>
             <option value="pinot_blanc">Pinot Blanc</option>
@@ -117,9 +113,9 @@
             <option value="pinot_grigio">Pinot Grigio</option>
             <option value="gewurztraminer">Gewurztraminer</option>
             <option value="riesling">Riesling</option>
-        </select> -->
+        </select>
         <!-- RED WINE RADIAL SELECTED -->
-        <!-- <select name="red-wines" id="red-wine-options" class="wine-options is-hidden">
+        <select name="red-wines" id="red-options" class="red-wine-list is-hidden">
             <option value="" selected disabled>Tonight's Red is:
             </option>
             <option value="cabernet_sauvignon">Cabernet Sauvignon</option>
@@ -133,8 +129,9 @@
             <option value="rioja">Rioja</option>
             <option value="zinfandel">Zinfandel</option>
         </select>
+        <br>
         <button type="submit" class="submitButton">Submit</button>
-    </div>.varietal-container end -->
+    </div><!--.varietal-container end-->
     <!-- VARIETAL INPUT END -->
     </form>
 </section>
@@ -150,18 +147,13 @@
     <div class="meal-suggestion-text">
         <h3>A great meal with your wine would be:</h3>
         <p></p>
-        <!-- <p>Looks like you should be having this for dinner:
-        </p>
-        <p>There's no JavaScript yet so... more wine, a liquid diet!</p>
-        <p>For recipes, click <a href="#recipes">here</a></p> -->
     </div>
 </section>
 <!-- SECTION: MEAL PAIR SUGGESTION END -->
 
 <!-- JAVA SCRIPT LINK -->
-    <script src = "javaScript/scripts.js"></script>
+    <script src = "./javaScript/app.js"></script>
 <!--JAVA LINK END  -->
->>>>>>> 11eeb7dbc877885cda0972ca9b81299320ab62ee
 </body>
 
 <footer>

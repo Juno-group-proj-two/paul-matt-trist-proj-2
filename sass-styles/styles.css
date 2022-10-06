@@ -246,6 +246,14 @@ hr {
   color: #EDE9D8;
 }
 
+button {
+  height: 40px;
+  width: 160px;
+  background-color: #EDE9D8;
+  color: #330011;
+  border-radius: 10%;
+}
+
 .mobile-nav {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
@@ -350,6 +358,13 @@ h3 {
   font-size: 2rem;
   margin-top: 10%;
 }
+.wine-input p {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #EDE9D8;
+  text-align: center;
+  margin: 18px 0;
+}
 .wine-input form {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -397,9 +412,11 @@ h3 {
   text-align: center;
   padding: 0;
 }
-.wine-input .varietal-container .wine-drop-down {
+.wine-input .varietal-container .white-wine-list, .wine-input .varietal-container .red-wine-list {
   width: 90%;
-  margin: 1% 0;
+  margin: 18px 0;
+  padding: 0;
+  border: 0;
 }
 
 .meal-suggestion {
