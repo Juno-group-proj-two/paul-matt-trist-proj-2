@@ -308,7 +308,7 @@ header {
 h3 {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
-  color: #f66486;
+  color: #fa849f;
   text-align: center;
   font-size: 2rem;
 }
@@ -324,7 +324,7 @@ h3 {
 .how-to span {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
-  color: #f66486;
+  color: #fa849f;
   text-align: center;
   font-size: 1.5rem;
   font-weight: 700;
@@ -377,7 +377,7 @@ h3 {
   grid-template-columns: 1fr 1fr;
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
-  color: #f66486;
+  color: #fa849f;
   text-align: center;
   border: hidden;
   padding: 0;
@@ -408,7 +408,7 @@ h3 {
 .wine-input .varietal-container label {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
-  color: #f66486;
+  color: #fa849f;
   text-align: center;
   padding: 0;
 }
@@ -436,7 +436,7 @@ h3 {
 }
 .meal-suggestion a {
   text-decoration: none;
-  color: #f66486;
+  color: #fa849f;
 }
 
 footer {
@@ -448,5 +448,23 @@ footer {
 }
 footer a {
   text-decoration: none;
-  color: #f66486;
+  color: #fa849f;
+}
+
+.wine-suggestion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.wine-suggestion h3 {
+  margin: 0;
+}
+.wine-suggestion div {
+  display: flex;
+  flex-direction: column;
+}
+.wine-suggestion label, .wine-suggestion p {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #EDE9D8;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

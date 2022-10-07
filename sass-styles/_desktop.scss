@@ -135,3 +135,18 @@ footer{
         color:$rose;
     }
 }
+.wine-suggestion{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    h3{
+        margin:0;
+    }
+    div{
+        display:flex;
+        flex-direction: column;
+    }
+    label, p{
+        @include upper-ubuntu-w;
+    }
+}

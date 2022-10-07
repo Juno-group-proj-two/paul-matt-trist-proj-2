@@ -120,7 +120,7 @@
             <option value="zinfandel">Zinfandel</option>
         </select>
         <br>
-        <button type="submit" class="submitButton">Submit</button>
+        <button type="submit">Submit</button>
     </div><!--.varietal-container end-->
     <!-- VARIETAL INPUT END -->
     </form>
@@ -133,13 +133,29 @@
     <div class="meal-suggestion-img">
         <img src="./assets/selkie-sausage.jpg" alt="Selkie the sausage">
     </div>
-    <!-SUGGESTED MEAL OUTPUT TEXT  -->
+    <!--SUGGESTED MEAL OUTPUT TEXT  -->
     <div class="meal-suggestion-text">
         <h3>A great meal with your wine would be:</h3>
         <p></p>
     </div>
 </section>
 <!-- SECTION: MEAL PAIR SUGGESTION END -->
+
+<!-- SECTION: WINE PAIR-->
+<section class="wine-suggestion wrapper" >
+    <div>
+        <form action="" id="food-form" name="food-form">
+            <label for="meal-input">What's for Dinner?</label>
+            <input type="text" name="meal-input" class="meal-input" id="meal-input">
+            <button type="submit" class="meal-submit">Submit</button>
+        </form>
+    </div>
+    <!-- SUGGESTED WINE OUTPUT -->
+    <div>
+        <h3>Javascript says:</h3>
+        <p class="wine-result"></p>
+    </div>
+</section>
 
 <!-- JAVA SCRIPT LINK -->
     <script src = "./javaScript/app.js"></script>

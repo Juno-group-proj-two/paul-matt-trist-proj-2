@@ -1,62 +1,23 @@
-// RADIO MENU JS
-const whiteWine = document.querySelector('.radio-white');
-const redWine = document.querySelector('.radio-red');
-const whiteList = document.querySelector('.white-wine-list');
-const redList = document.querySelector('.red-wine-list');
-const chooseReminder = document.querySelector('.choose');
-whiteWine.addEventListener('click', ()=>{
-    whiteList.classList.remove('is-hidden');
-    redList.classList.add('is-hidden');
-    chooseReminder.classList.add('is-hidden')
-})
-redWine.addEventListener('click', ()=>{
-    redList.classList.toggle('is-hidden');
-    whiteList.classList.add('is-hidden');
-    chooseReminder.classList.add('is-hidden');
-})
-// ATTEMPTING NAMESPACING
-// const wineRadios = {};
-
-// wineRadios.white = document.querySelector('.radio-white');
-// wineRadios.red = document.querySelector('.radio-red');
-// wineRadios.whiteDrop = document.querySelector('.white-wine-list');
-// wineRadios.redDrop = document.querySelector('.red-wine-list');
-// wineRadios.chooseReminder = document.querySelector('.choose');
-
-// wineRadios.whiteList = () => {
-//     wineRadios.white.addEventListener('click', (event)=>{
-//         wineRadios.whiteDrop.classList.remove('is-hidden');
-//         wineRadios.redDrop.classList.add('is-hidden');
-//         wineRadios.chooseReminder.classList.add('is-hidden');
-//     })
-// };
-// wineRadios.redList = () => {
-//     wineRadios.red.addEventListener('click', (e)=>{
-//         wineRadios.whiteDrop.classList.add('is-hidden');
-//         wineRadios.redDrop.classList.remove('is-hidden');
-//         wineRadios.chooseReminder.classList.add('is-hidden');
-//     })
-// };
-
-// wineRadios.init = () => {
-//     wineRadios.whiteList();
-//     wineRadios.redList();
-// }
-
-// wineRadios.init();
-
-// Wine App:
+// WINE PAIRING APP
 const app = {};
 
-app.apiKey = "8a1819c9d2c94e0982770273264c4387"
+app.apiKey = "897d5fbeefc34f42adb50cfbbfb70ac9"
+app.apiKey2 = "8161e734602a4734b2d6d521776cfb99"
 
+// RADIO MENU CONSTS
+app.whiteWine = document.querySelector('.radio-white');
+app.redWine = document.querySelector('.radio-red');
+app.whiteList = document.querySelector('.white-wine-list');
+app.redList = document.querySelector('.red-wine-list');
+app.chooseReminder = document.querySelector('.choose');
+
+// PAIR FOOD TO WINE
 app.getWine = (query) => {
     const url = new URL("https://api.spoonacular.com/food/wine/dishes")
     url.search = new URLSearchParams({
         apiKey: app.apiKey,
         wine: query,
     });
-
 
     fetch(url)
         .then((response) => {
@@ -68,19 +29,20 @@ app.getWine = (query) => {
         })
         .then((apiData) => {
             const resultsParagraph = document.querySelector(".meal-suggestion-text p")
-            console.log(apiData)
-            resultsParagraph.innerText = apiData.text
-        })
-        .then((data) => {
-            if (data.status === "failure") {
+            if (apiData.status == "failure") {
                 alert("To be Updated, Try Again!")
+                resultsParagraph.innerText = "To be Updated, Try Again!"
+
+            } else {
+                resultsParagraph.innerText = apiData.text
+
             }
+            console.log(apiData)
         })
         .catch((error) => {
-
             if (error.message === "false") {
                 alert("Please choose Red or White then a type in the dropdown menu")
-            } 
+            }
         });
 };
 
@@ -91,11 +53,11 @@ app.getUserInput = () => {
         e.preventDefault();
         const whiteSelect = document.getElementById('white-options');
         const redSelect = document.getElementById('red-options');
-        
-        if (whiteWine.checked == true){
-        const userInput = whiteSelect.options[whiteSelect.selectedIndex].value;
-        app.getWine(userInput)
-        } 
+
+        if (app.whiteWine.checked == true) {
+            const userInput = whiteSelect.options[whiteSelect.selectedIndex].value;
+            app.getWine(userInput)
+        }
         else {
             const userInput = redSelect.options[redSelect.selectedIndex].value;
             app.getWine(userInput);
@@ -103,8 +65,68 @@ app.getUserInput = () => {
     });
 }
 
+// RADIO MENUS SHOW DROP DOWN
+app.dropDownSelect = () => {
+    app.whiteWine.addEventListener('click', () => {
+        app.whiteList.classList.remove('is-hidden');
+        app.redList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden')
+    })
+    app.redWine.addEventListener('click', () => {
+        app.redList.classList.toggle('is-hidden');
+        app.whiteList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden');
+    })
+}
+
+// GET SOMMELIER HELP:
+app.sommelier = (mealName) => {
+    const wineUrl = new URL ('https://api.spoonacular.com/food/wine/pairing')
+    wineUrl.search = new URLSearchParams({
+        apiKey: app.apiKey2,
+        food: mealName,
+    });
+
+    fetch(wineUrl)
+        .then((wineResponse) => {
+            if (wineResponse.ok) {
+                return wineResponse.json();
+            } else {
+                throw new Error(wineResponse.ok)
+            }
+        })
+        .then((wineData) => {
+            const pairingParagraph = document.querySelector(".wine-result")
+            if (wineData.status == "failure") {
+                alert("No wine suggestions for that meal")
+                pairingParagraph.innerText = "No wine suggestions for that meal"
+
+            } else {
+                pairingParagraph.innerText = wineData.pairingText
+                console.log(wineData)
+            }
+        })
+        .catch((error) => {
+            if (error.message === "false") {
+                alert("Please double check your spelling")
+            }
+        });
+}
+app.getMealInfo = () => {
+    const mealInfo = document.getElementById('food-form')
+    mealInfo.addEventListener('submit', function(event){
+        event.preventDefault();
+        console.log(event);
+        mealName = event.explicitOriginalTarget.children[1].value.toLowerCase();
+        app.sommelier(mealName);
+    })
+}
+
+// RUN:
 app.init = () => {
     app.getUserInput();
+    app.dropDownSelect();
+    app.getMealInfo();
 };
 
 app.init();
