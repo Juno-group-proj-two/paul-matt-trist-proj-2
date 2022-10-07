@@ -41,15 +41,24 @@ app.getWine = (query) => {
         })
         .then((apiData) => {
             const resultsParagraph = document.querySelector(".meal-suggestion-text p")
-            console.log(apiData)
-            resultsParagraph.innerText = apiData.text
-        })
-        .then((data) => {
-            // console.log(data);
-            if (data.status === "failure") {
+            if (apiData.status == "failure") {
                 alert("To be Updated, Try Again!")
+                resultsParagraph.innerText = "To be Updated, Try Again!"
+
+            } else {
+                resultsParagraph.innerText = apiData.text
+
             }
+            // const resultsParagraph = document.querySelector(".meal-suggestion-text p")
+            console.log(apiData)
+            // resultsParagraph.innerText = apiData.text
         })
+        // .then((data) => {
+        //     // console.log(data);
+        //     // if (data.status === "failure") {
+        //     //     alert("To be Updated, Try Again!")
+        //     // }
+        // })
         .catch((error) => {
             // console.log(error);
 
@@ -86,3 +95,5 @@ app.init = () => {
 };
 
 app.init();
+
+// 
