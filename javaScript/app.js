@@ -1,25 +1,15 @@
-// RADIO MENU JS
-const whiteWine = document.querySelector('.radio-white');
-const redWine = document.querySelector('.radio-red');
-const whiteList = document.querySelector('.white-wine-list');
-const redList = document.querySelector('.red-wine-list');
-const chooseReminder = document.querySelector('.choose');
-
-whiteWine.addEventListener('click', ()=>{
-    whiteList.classList.remove('is-hidden');
-    redList.classList.add('is-hidden');
-    chooseReminder.classList.add('is-hidden')
-})
-redWine.addEventListener('click', ()=>{
-    redList.classList.toggle('is-hidden');
-    whiteList.classList.add('is-hidden');
-    chooseReminder.classList.add('is-hidden');
-})
-
-// Wine App:
+// WINE PAIRING APP
 const app = {};
 
-app.apiKey = "8a1819c9d2c94e0982770273264c4387"
+app.apiKey = "897d5fbeefc34f42adb50cfbbfb70ac9"
+
+// RADIO MENU JS
+app.whiteWine = document.querySelector('.radio-white');
+app.redWine = document.querySelector('.radio-red');
+app.whiteList = document.querySelector('.white-wine-list');
+app.redList = document.querySelector('.red-wine-list');
+app.chooseReminder = document.querySelector('.choose');
+
 
 app.getWine = (query) => {
     const url = new URL("https://api.spoonacular.com/food/wine/dishes")
@@ -28,11 +18,8 @@ app.getWine = (query) => {
         wine: query,
     });
 
-    // console.log(url)
-
     fetch(url)
         .then((response) => {
-            // console.log(response);
             if (response.ok) {
                 return response.json();
             } else {
@@ -49,22 +36,12 @@ app.getWine = (query) => {
                 resultsParagraph.innerText = apiData.text
 
             }
-            // const resultsParagraph = document.querySelector(".meal-suggestion-text p")
             console.log(apiData)
-            // resultsParagraph.innerText = apiData.text
         })
-        // .then((data) => {
-        //     // console.log(data);
-        //     // if (data.status === "failure") {
-        //     //     alert("To be Updated, Try Again!")
-        //     // }
-        // })
         .catch((error) => {
-            // console.log(error);
-
             if (error.message === "false") {
                 alert("Please choose Red or White then a type in the dropdown menu")
-            } 
+            }
         });
 };
 
@@ -75,25 +52,34 @@ app.getUserInput = () => {
         e.preventDefault();
         const whiteSelect = document.getElementById('white-options');
         const redSelect = document.getElementById('red-options');
-        
-        if (whiteWine.checked == true){
-        const userInput = whiteSelect.options[whiteSelect.selectedIndex].value;
-        // console.log(userInput);
-        app.getWine(userInput)
-        } 
-        // Update to else if for sparkling?
+
+        if (app.whiteWine.checked == true) {
+            const userInput = whiteSelect.options[whiteSelect.selectedIndex].value;
+            app.getWine(userInput)
+        }
         else {
             const userInput = redSelect.options[redSelect.selectedIndex].value;
-            // console.log(userInput);
             app.getWine(userInput);
         }
     });
 }
 
+app.dropDownSelect = () => {
+    app.whiteWine.addEventListener('click', () => {
+        app.whiteList.classList.remove('is-hidden');
+        app.redList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden')
+    })
+    app.redWine.addEventListener('click', () => {
+        app.redList.classList.toggle('is-hidden');
+        app.whiteList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden');
+    })
+}
+
 app.init = () => {
     app.getUserInput();
+    app.dropDownSelect();
 };
 
 app.init();
-
-// 
