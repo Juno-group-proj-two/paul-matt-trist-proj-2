@@ -30,14 +30,12 @@ app.getWine = (query) => {
         .then((apiData) => {
             const resultsParagraph = document.querySelector(".meal-suggestion-text p")
             if (apiData.status == "failure") {
-                alert("To be Updated, Try Again!")
                 resultsParagraph.innerText = "To be Updated, Try Again!"
 
             } else {
                 resultsParagraph.innerText = apiData.text
 
             }
-            console.log(apiData)
         })
         .catch((error) => {
             if (error.message === "false") {
@@ -98,17 +96,15 @@ app.sommelier = (mealName) => {
         .then((wineData) => {
             const pairingParagraph = document.querySelector(".wine-result")
             if (wineData.status == "failure") {
-                alert("No wine suggestions for that meal")
                 pairingParagraph.innerText = "No wine suggestions for that meal"
 
             } else {
                 pairingParagraph.innerText = wineData.pairingText
-                console.log(wineData)
             }
         })
         .catch((error) => {
             if (error.message === "false") {
-                alert("Please double check your spelling")
+                alert("Please enter a cuisine or food type")
             }
         });
 }
@@ -116,8 +112,7 @@ app.getMealInfo = () => {
     const mealInfo = document.getElementById('food-form')
     mealInfo.addEventListener('submit', function(event){
         event.preventDefault();
-        console.log(event);
-        mealName = event.explicitOriginalTarget.children[1].value.toLowerCase();
+        mealName = event.target[0].value.toLowerCase();
         app.sommelier(mealName);
     })
 }
