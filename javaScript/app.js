@@ -96,7 +96,7 @@ app.sommelier = (mealName) => {
         .then((wineData) => {
             const pairingParagraph = document.querySelector(".wine-result")
             if (wineData.status == "failure") {
-                pairingParagraph.innerText = "No wine suggestions for that meal"
+                pairingParagraph.innerText = "No wine suggestions for that meal, please also double check the spelling"
 
             } else {
                 pairingParagraph.innerText = wineData.pairingText
