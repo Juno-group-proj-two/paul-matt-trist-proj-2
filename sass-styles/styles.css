@@ -240,10 +240,33 @@ body {
   background-color: #330011;
 }
 
+h2 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #EDE9D8;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 10%;
+}
+
+h3 {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #fa849f;
+  text-align: center;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
 hr {
   height: 5px;
   background-color: #EDE9D8;
   color: #EDE9D8;
+}
+
+img {
+  max-width: 408px;
+  max-height: 408px;
 }
 
 button {
@@ -305,21 +328,15 @@ header {
   transform: translateY(200%);
 }
 
-h3 {
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
-  color: #fa849f;
-  text-align: center;
-  font-size: 2rem;
-}
-
 .how-to {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 5rem;
   text-align: center;
+  margin: 5% auto;
 }
-.how-to .about-left, .how-to .about-right {
-  margin: 5% 0;
+.how-to h3 {
+  margin: 20px auto;
 }
 .how-to span {
   font-family: "Ubuntu", sans-serif;
@@ -334,7 +351,7 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
-.how-to p {
+.how-to .about-steps p {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   color: #EDE9D8;
@@ -347,16 +364,9 @@ h3 {
 .wine-input {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin: 1% auto;
+  gap: 5rem;
   border: 5px solid #EDE9D8;
-}
-.wine-input h2 {
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
-  color: #EDE9D8;
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 10%;
+  margin: 1% auto;
 }
 .wine-input p {
   font-family: "Ubuntu", sans-serif;
@@ -365,9 +375,13 @@ h3 {
   text-align: center;
   margin: 18px 0;
 }
+.wine-input .choose {
+  font-size: 1.3rem;
+}
 .wine-input form {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 5rem;
   gap: 5rem;
   margin: 5% 0;
   height: 10vh;
@@ -403,7 +417,6 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
 }
 .wine-input .varietal-container label {
   font-family: "Ubuntu", sans-serif;
@@ -413,15 +426,18 @@ h3 {
   padding: 0;
 }
 .wine-input .varietal-container .white-wine-list, .wine-input .varietal-container .red-wine-list {
-  width: 90%;
+  height: 1.5rem;
   margin: 18px 0;
   padding: 0;
   border: 0;
+  width: 90%;
 }
 
 .meal-suggestion {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+  text-align: center;
   margin: 5% auto;
 }
 .meal-suggestion p {
@@ -431,12 +447,79 @@ h3 {
   text-align: center;
   margin: 5% auto;
 }
-.meal-suggestion img {
-  width: 100%;
-}
 .meal-suggestion a {
   text-decoration: none;
   color: #fa849f;
+}
+
+.somm-about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  text-align: center;
+  margin: 5% auto;
+}
+.somm-about .about-left {
+  grid-column: span 2;
+}
+.somm-about h3 {
+  margin: 20px auto;
+}
+.somm-about span {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #fa849f;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.somm-about .about-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  grid-column: span 2;
+}
+.somm-about .about-steps p {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #EDE9D8;
+  text-align: center;
+  font-size: 1.2rem;
+  text-align: left;
+  margin: 5px 0;
+}
+
+.food-input {
+  border: 5px solid #EDE9D8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 5%;
+}
+.food-input div {
+  margin-bottom: 3%;
+}
+.food-input h2 {
+  grid-column: span 2;
+  margin: 1% auto;
+}
+.food-input form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.food-input input {
+  height: 1.5rem;
+  margin: 18px 0;
+  padding: 0;
+  border: 0;
+  width: 66%;
+}
+.food-input label, .food-input p {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  color: #EDE9D8;
+  text-align: center;
 }
 
 footer {
@@ -446,25 +529,13 @@ footer {
   text-align: center;
   margin: 1% auto;
 }
+footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1% auto;
+  list-style: none;
+}
 footer a {
   text-decoration: none;
   color: #fa849f;
-}
-
-.wine-suggestion {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.wine-suggestion h3 {
-  margin: 0;
-}
-.wine-suggestion div {
-  display: flex;
-  flex-direction: column;
-}
-.wine-suggestion label, .wine-suggestion p {
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
-  color: #EDE9D8;
-  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

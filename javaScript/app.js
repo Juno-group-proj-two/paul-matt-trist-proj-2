@@ -43,8 +43,6 @@ app.getWine = (query) => {
             }
         });
 };
-
-
 app.getUserInput = () => {
     const userForm = document.getElementById('wine-form');
     userForm.addEventListener('submit', function (e) {

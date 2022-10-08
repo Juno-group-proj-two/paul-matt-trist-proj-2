@@ -8,19 +8,36 @@
     margin:0 auto;
 }
 
+// MULTI USE:
+
 .is-hidden{
     display:none;
 }
 
-// MULTI USE:
 body{
     background-color:$fb-red;
+}
+
+h2{
+    @include upper-ubuntu-w;
+    font-size:2rem;
+    margin-top:10%;
+}
+
+h3{
+    @include upper-ubuntu-rose;
+    font-size:2rem;
+    margin:0 auto;
 }
 
 hr{
     height:5px;
     background-color:$white-wine;
     color:$white-wine;
+}
+img{
+    max-width: 408px;
+    max-height: 408px;
 }
 
 button{

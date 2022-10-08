@@ -44,19 +44,19 @@
 <section class="how-to wrapper">
 
     <div class="about-left">
-        <img src="./assets/about-section-img.jpg" alt="Various colors of wine in bottles lined up infront of a white background">
+        <img src="./assets/about-section-img-crop.jpg" alt="Various colors of wine in bottles lined up infront of a white background">
     </div><!--.about-left end-->
 
     <div class="about-right">
-        <h3>How to use this app</h3>
+        <h3>pair food to your wine</h3>
 
         <div class="about-steps">
             <span>Step 1:</span>
-            <p>fetch(wine in the cellar)</p>
+            <p>Decide what wine you're having</p>
             <span>Step 2:</span>
-            <p>.then(red or white)</p>
+            <p>Select red or white to open menus</p>
             <span>Step 3:</span>
-            <p>function(enter varietal)</p>
+            <p>Choose your varietal from the drop down list</p>
         </div><!--.about-steps end-->
 
     </div><!--.about-right end-->
@@ -66,7 +66,7 @@
 
 <!-- SECTION: WINE SELECTOR AND INPUT START -->
 <section id="p-wine" class="wine-input wrapper">
-    <h2>Select Your Preferences</h2>
+    <h2>Select your wine details</h2>
     <!-- RED OR WHITE? -->
     <form action="" id="wine-form" name="wine-form">
         <div>
@@ -86,7 +86,6 @@
     <!-- VARIETAL? -->
     <div class="varietal-container">
         <label for="varietal-select">Choose a varietal:</label>
-        <br>
         <p class="choose">Start by choosing red or white</p>
         <!-- WINE WINE RADIAL SELECTED-->
         <select name="white-wines" id="white-options" class="white-wine-list is-hidden"> 
@@ -115,8 +114,7 @@
             <option value="rioja">Rioja</option>
             <option value="zinfandel">Zinfandel</option>
         </select>
-        <br>
-        <button type="submit">Submit</button>
+        <button type="submit">Ask Sommelier</button>
     </div><!--.varietal-container end-->
     <!-- VARIETAL INPUT END -->
     </form>
@@ -127,7 +125,7 @@
 <section class="meal-suggestion wrapper">
     <!-- SUGGESTED MEAL OUTPUT IMAGE -->
     <div class="meal-suggestion-img">
-        <img src="./assets/selkie-sausage.jpg" alt="Selkie the sausage">
+        <img src="./assets/adam-bartoszewicz-photo-crop.jpg" alt="An elegantly set dinner table focusing on a salad and two glasses of wine">
     </div>
     <!--SUGGESTED MEAL OUTPUT TEXT  -->
     <div class="meal-suggestion-text">
@@ -137,13 +135,36 @@
 </section>
 <!-- SECTION: MEAL PAIR SUGGESTION END -->
 
+<!-- SECTION: HOW TO USE THE SOMMELIER-->
+<section class="somm-about wrapper">
+
+    <div class="about-left">
+        <h3>pair wine to your food</h3>
+        <div class="about-steps">
+            <span>Step 1:</span>
+            <p>Decide what you're eating</p>
+            <span>Step 2:</span>
+            <p>Type a food name or cuisine type</p>
+            <span>Step 3:</span>
+            <p>Ask the sommelier for suggestions</p>
+        </div><!--.about-steps end-->
+    </div><!--.about-left end-->
+
+    <div class="about-right">
+        <img src="./assets/maria-das-dores-img.jpg" alt="A bottle of white wine next to a plate of steak and fries">
+    </div><!--.about-right end-->
+
+</section>
+<!-- SECTION: HOW TO USE THE SOMMELIER END-->
+
 <!-- SECTION: WINE PAIR-->
-<section class="wine-suggestion wrapper" >
-    <div>
-        <form action="" id="food-form" name="food-form">
-            <label for="meal-input">What's for Dinner?</label>
+<section class="food-input wrapper" >
+    <h2>Enter your Meal</h2>
+    <div id="food-form" class="food-form">
+        <form action="" name="food-form">
+            <label for="meal-input" id="p-meal">What's for Dinner?</label>
             <input type="text" name="meal-input" class="meal-input" id="meal-input">
-            <button type="submit" class="meal-submit">Submit</button>
+            <button type="submit" class="meal-submit">Ask Sommelier</button>
         </form>
     </div>
     <!-- SUGGESTED WINE OUTPUT -->
@@ -160,7 +181,12 @@
 
 <footer>
     <hr>
-    <p class="wrapper">This site brought to you by <a href="https://www.junocollege.com">Juno College</a></p>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#p-wine">Pair my Wine</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="wrapper">This App brought to you by <a href="https://www.junocollege.com">Juno College</a></p>
 </footer>
 
 </html>
