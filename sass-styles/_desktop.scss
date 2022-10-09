@@ -1,24 +1,6 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-header{
-    background-color:$fb-red;
-}
-.temp-design{
-    background-image:url('../assets/header-one-unsplash-crop.jpg');
-    width:100%;
-    height:60vh;
-
-    h1{   
-        @include upper-ubuntu-w;
-        font-size:3.5rem;
-        background-color:$fb-red;
-        border:2px solid $white-wine;
-        width:33%;
-        transform:translateY(200%);
-    }
-}
-
 .how-to{
     @include general-grid;
     text-align:center;

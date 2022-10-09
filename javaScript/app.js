@@ -124,9 +124,17 @@ app.init = () => {
 
 app.init();
 
+// HAMBURGER MENU
 const toggleButton = document.getElementsByClassName("toggleButton")[0]
 const navBarLinks = document.getElementsByClassName("navBarLinks")[0]
+const closeHamburgerMenu = document.querySelectorAll('.nav-link');
 
 toggleButton.addEventListener ('click', () => {
     navBarLinks.classList.toggle('active');
+});
+
+closeHamburgerMenu.forEach((navLink) => {
+    navLink.addEventListener('click', ()=> {
+    navBarLinks.classList.remove('active');
+    });
 });

@@ -1,24 +1,38 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 header {
-    color: white;
+    background-color:$fb-red;
+    color: $white-wine;
     ul{
         list-style: none;
         display: flex;
-        justify-content: end;
+        justify-content:flex-end;
  
         a{
-        text-decoration: none;
-        color: white;
-        padding: 10px;
-        text-transform: uppercase;
-   
+            @include upper-ubuntu-w;
+            text-decoration: none;
+            padding: 10px;
+        }    
     }
-           
 }
-.fa-duotone {
-    color: white;
-  }
+
+.design{
+    background-image:url('../assets/header-one-unsplash-crop.jpg');
+    width:100%;
+    height:60vh;
+}
+.headerContent{
+    position:relative;
+}
+h1{   
+    @include upper-ubuntu-w;
+    font-size:3.5rem;
+    background-color:$fb-red;
+    border:2px solid $white-wine;
+    width:33%;
+    position:absolute;
+    top:45%;
 }
 
 .toggleButton{
@@ -30,31 +44,54 @@ header {
 }
 
 
-@media (max-width: 450px){
+@media (max-width: 480px){
 
     .toggleButton {
         display: flex;
+        position:fixed;
+        z-index: 100;
     }
     
     .navBarLinks{
         display: none;
         width: 100%;
+        position:fixed;
+        left:0;
+        top:0;
+        z-index:10;
+        
         ul{
+            background-color:$fb-red;
             flex-direction: column; 
             width: 100%;
+            padding:0;
+            margin:0;
         }
         li {
-            text-align: center;
+            @include upper-ubuntu-w;
+            margin:10px auto;
         }
         
     }
     .navBarLinks.active{
         display:flex ;
     }
-    .navBar {
+    .navBar{
         flex-direction: column;
         align-items: flex-start;
         margin-top: 50px;
         margin-left: 15px;
+    }
+
+    .design{
+        background-image:url('..//assets/mae-mu-header.jpg');
+        background-size:cover;
+    }
+
+    h1{
+        width:100%;
+        font-size:2rem;
+        position:static;
+        margin:0;
     }
 }

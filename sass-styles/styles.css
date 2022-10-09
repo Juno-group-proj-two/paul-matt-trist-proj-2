@@ -275,48 +275,51 @@ button {
   background-color: #EDE9D8;
   color: #330011;
   border-radius: 10%;
+  transition: all 0.5s ease-in;
 }
-
-.mobile-nav {
-  font-family: "Ubuntu", sans-serif;
-  text-transform: uppercase;
+button:hover, button :focus {
+  background-color: #330011;
   color: #EDE9D8;
-  text-align: center;
-  text-align: right;
-}
-.mobile-nav img {
-  height: 60px;
-  width: 60px;
-  margin-top: 1%;
-  margin-right: 10%;
-  filter: invert(95%) sepia(10%) saturate(274%) hue-rotate(9deg) brightness(98%) contrast(92%);
 }
 
-.desktop-nav ul {
+input[type=radio] {
+  transition: all 0.5s ease-in;
+}
+input[type=radio]:hover, input[type=radio] :focus {
+  scale: 200%;
+  transform: translateX(-10%);
+  transform: translateY(-5%);
+}
+
+header {
+  background-color: #330011;
+  color: #EDE9D8;
+}
+header ul {
+  list-style: none;
   display: flex;
   justify-content: flex-end;
-  list-style: none;
-  gap: 4rem;
-  margin-right: 10%;
 }
-.desktop-nav a {
+header ul a {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   color: #EDE9D8;
   text-align: center;
   text-decoration: none;
+  padding: 10px;
 }
 
-header {
-  background-color: #330011;
-}
-
-.temp-design {
+.design {
   background-image: url("../assets/header-one-unsplash-crop.jpg");
   width: 100%;
   height: 60vh;
 }
-.temp-design h1 {
+
+.headerContent {
+  position: relative;
+}
+
+h1 {
   font-family: "Ubuntu", sans-serif;
   text-transform: uppercase;
   color: #EDE9D8;
@@ -325,9 +328,66 @@ header {
   background-color: #330011;
   border: 2px solid #EDE9D8;
   width: 33%;
-  transform: translateY(200%);
+  position: absolute;
+  top: 45%;
 }
 
+.toggleButton {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+@media (max-width: 480px) {
+  .toggleButton {
+    display: flex;
+    position: fixed;
+    z-index: 100;
+  }
+  .navBarLinks {
+    display: none;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+  }
+  .navBarLinks ul {
+    background-color: #330011;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .navBarLinks li {
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    color: #EDE9D8;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .navBarLinks.active {
+    display: flex;
+  }
+  .navBar {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-left: 15px;
+  }
+  .design {
+    background-image: url("..//assets/mae-mu-header.jpg");
+    background-size: cover;
+  }
+  h1 {
+    width: 100%;
+    font-size: 2rem;
+    position: static;
+    margin: 0;
+  }
+}
 .how-to {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -540,54 +600,56 @@ footer a {
   color: #fa849f;
 }
 
-header {
-  color: white;
-}
-header ul {
-  list-style: none;
-  display: flex;
-  justify-content: end;
-}
-header ul a {
-  text-decoration: none;
-  color: white;
-  padding: 10px;
-  text-transform: uppercase;
-}
-header .fa-duotone {
-  color: white;
-}
-
-.toggleButton {
-  display: none;
-  z-index: 10;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-@media (max-width: 450px) {
-  .toggleButton {
-    display: flex;
-  }
-  .navBarLinks {
-    display: none;
+@media (max-width: 480px) {
+  img {
     width: 100%;
   }
-  .navBarLinks ul {
-    flex-direction: column;
-    width: 100%;
+  .how-to {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  .navBarLinks li {
+  .how-to .about-steps {
+    grid-template-columns: 1fr;
+  }
+  .how-to .about-steps p {
     text-align: center;
   }
-  .navBarLinks.active {
-    display: flex;
+  .wine-input {
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-  .navBar {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 50px;
-    margin-left: 15px;
+  .wine-input form {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 0 auto;
+    height: auto;
+  }
+  .wine-input .choose-wine legend {
+    margin: 0 auto;
+  }
+  .meal-suggestion {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .meal-suggestion .meal-suggestion-text {
+    grid-row: 1;
+  }
+  .somm-about {
+    display: block;
+  }
+  .somm-about .about-steps {
+    display: block;
+  }
+  .somm-about .about-steps p {
+    text-align: center;
+    margin: 10px auto;
+  }
+  .food-input {
+    display: block;
+    margin-bottom: 10%;
+  }
+  footer ul {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,6 @@
 @use './mixins';
 @use './general';
 
-@use './nav-bars';
-@use './desktop';
 @use './header';
+@use './desktop';
+@use './mobile'
