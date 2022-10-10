@@ -4,12 +4,44 @@ const app = {};
 app.apiKey = "897d5fbeefc34f42adb50cfbbfb70ac9"
 app.apiKey2 = "8161e734602a4734b2d6d521776cfb99"
 
-// RADIO MENU CONSTS
+// HAMBURGER MENU
+
+
+app.mobileMenu = ()=>{
+    app.toggleButton = document.getElementsByClassName("toggleButton")[0]
+    app.navBarLinks = document.getElementsByClassName("navBarLinks")[0]
+    app.closeHamburgerMenu = document.querySelectorAll('.nav-link');
+    
+    app.toggleButton.addEventListener ('click', () => {
+        app.navBarLinks.classList.toggle('active');
+    });
+    app.closeHamburgerMenu.forEach((navLink) => {
+        app.navBarLinks.addEventListener('click', ()=> {
+        app.navBarLinks.classList.remove('active');
+    });
+});
+}
+
+// RADIO MENU
 app.whiteWine = document.querySelector('.radio-white');
 app.redWine = document.querySelector('.radio-red');
 app.whiteList = document.querySelector('.white-wine-list');
 app.redList = document.querySelector('.red-wine-list');
 app.chooseReminder = document.querySelector('.choose');
+
+// RADIO MENUS SHOW DROP DOWN
+app.dropDownSelect = () => {
+    app.whiteWine.addEventListener('click', () => {
+        app.whiteList.classList.remove('is-hidden');
+        app.redList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden')
+    });
+    app.redWine.addEventListener('click', () => {
+        app.redList.classList.toggle('is-hidden');
+        app.whiteList.classList.add('is-hidden');
+        app.chooseReminder.classList.add('is-hidden');
+    });
+}
 
 // PAIR FOOD TO WINE
 app.getWine = (query) => {
@@ -61,20 +93,6 @@ app.getUserInput = () => {
     });
 }
 
-// RADIO MENUS SHOW DROP DOWN
-app.dropDownSelect = () => {
-    app.whiteWine.addEventListener('click', () => {
-        app.whiteList.classList.remove('is-hidden');
-        app.redList.classList.add('is-hidden');
-        app.chooseReminder.classList.add('is-hidden')
-    })
-    app.redWine.addEventListener('click', () => {
-        app.redList.classList.toggle('is-hidden');
-        app.whiteList.classList.add('is-hidden');
-        app.chooseReminder.classList.add('is-hidden');
-    })
-}
-
 // GET SOMMELIER HELP:
 app.sommelier = (mealName) => {
     const wineUrl = new URL ('https://api.spoonacular.com/food/wine/pairing')
@@ -105,36 +123,23 @@ app.sommelier = (mealName) => {
                 alert("Please enter a cuisine or food type")
             }
         });
-}
+};
+
 app.getMealInfo = () => {
     const mealInfo = document.getElementById('food-form')
     mealInfo.addEventListener('submit', function(event){
         event.preventDefault();
         mealName = event.target[0].value.toLowerCase();
         app.sommelier(mealName);
-    })
-}
+    });
+};
 
 // RUN:
 app.init = () => {
     app.getUserInput();
     app.dropDownSelect();
     app.getMealInfo();
+    app.mobileMenu();
 };
 
 app.init();
-
-// HAMBURGER MENU
-const toggleButton = document.getElementsByClassName("toggleButton")[0]
-const navBarLinks = document.getElementsByClassName("navBarLinks")[0]
-const closeHamburgerMenu = document.querySelectorAll('.nav-link');
-
-toggleButton.addEventListener ('click', () => {
-    navBarLinks.classList.toggle('active');
-});
-
-closeHamburgerMenu.forEach((navLink) => {
-    navLink.addEventListener('click', ()=> {
-    navBarLinks.classList.remove('active');
-    });
-});
